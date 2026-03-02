@@ -27,8 +27,22 @@
     <div class="container mx-auto px-4 py-8 max-w-6xl">
         <!-- Header -->
         <header class="text-center mb-12">
-            <div class="inline-block p-4 bg-white rounded-full shadow-lg mb-6">
-                <i class="fas fa-laptop-code text-4xl text-primary"></i>
+            <div class="relative inline-block mb-6">
+                <!-- Avatar -->
+                <div id="avatar-container" class="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center overflow-hidden mx-auto border-4 border-white ring-2 ring-blue-100">
+                    <i id="avatar-icon" class="fas fa-laptop-code text-4xl text-primary"></i>
+                    <img id="avatar-img" src="" alt="Profile photo" class="w-full h-full object-cover hidden">
+                </div>
+                <!-- Photo controls -->
+                <div class="mt-3 flex items-center justify-center gap-2">
+                    <button onclick="document.getElementById('photo-input').click()" class="text-xs text-primary hover:text-secondary font-medium flex items-center gap-1 bg-white px-3 py-1.5 rounded-full shadow-sm border border-gray-200 hover:border-primary transition-colors duration-200">
+                        <i class="fas fa-camera text-xs"></i> Change photo
+                    </button>
+                    <button id="remove-photo-btn" onclick="removePhoto()" class="hidden text-xs text-red-500 hover:text-red-700 font-medium flex items-center gap-1 bg-white px-3 py-1.5 rounded-full shadow-sm border border-gray-200 hover:border-red-300 transition-colors duration-200">
+                        <i class="fas fa-times text-xs"></i> Remove
+                    </button>
+                </div>
+                <input type="file" id="photo-input" accept="image/*" class="hidden" onchange="handlePhotoUpload(event)">
             </div>
             <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4">Michael Chege</h1>
             <p class="text-xl text-gray-600 font-medium">Software Engineer | Backend-Focused Developer</p>
@@ -198,6 +212,77 @@
             <p>&copy; 2026 Michael Chege. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        (function () {
+            var MAX_INPUT_BYTES = 2 * 1024 * 1024; // 2 MB input guard
+            var MAX_DIMENSION = 256;               // px after resize
+            var STORAGE_KEY = 'profile_photo';
+
+            function setPhoto(dataUrl) {
+                var icon = document.getElementById('avatar-icon');
+                var img = document.getElementById('avatar-img');
+                var removeBtn = document.getElementById('remove-photo-btn');
+                img.src = dataUrl;
+                img.classList.remove('hidden');
+                icon.classList.add('hidden');
+                removeBtn.classList.remove('hidden');
+            }
+
+            window.removePhoto = function () {
+                try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+                var icon = document.getElementById('avatar-icon');
+                var img = document.getElementById('avatar-img');
+                var removeBtn = document.getElementById('remove-photo-btn');
+                img.src = '';
+                img.classList.add('hidden');
+                icon.classList.remove('hidden');
+                removeBtn.classList.add('hidden');
+            };
+
+            function resizeAndStore(dataUrl) {
+                var image = new Image();
+                image.onload = function () {
+                    var w = image.width, h = image.height;
+                    if (w > MAX_DIMENSION || h > MAX_DIMENSION) {
+                        if (w >= h) { h = Math.round(h * MAX_DIMENSION / w); w = MAX_DIMENSION; }
+                        else        { w = Math.round(w * MAX_DIMENSION / h); h = MAX_DIMENSION; }
+                    }
+                    var canvas = document.createElement('canvas');
+                    canvas.width = w; canvas.height = h;
+                    canvas.getContext('2d').drawImage(image, 0, 0, w, h);
+                    var resized = canvas.toDataURL('image/jpeg', 0.82);
+                    try {
+                        localStorage.setItem(STORAGE_KEY, resized);
+                    } catch (e) {
+                        alert('Could not save photo. Please check your browser settings or try a smaller image.');
+                        return;
+                    }
+                    setPhoto(resized);
+                };
+                image.src = dataUrl;
+            }
+
+            window.handlePhotoUpload = function (event) {
+                var file = event.target.files[0];
+                event.target.value = '';
+                if (!file) return;
+                if (file.size > MAX_INPUT_BYTES) {
+                    alert('Image is too large (max 2 MB). Please choose a smaller image.');
+                    return;
+                }
+                var reader = new FileReader();
+                reader.onload = function (e) { resizeAndStore(e.target.result); };
+                reader.readAsDataURL(file);
+            };
+
+            // Restore saved photo on page load
+            try {
+                var saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) setPhoto(saved);
+            } catch (e) {}
+        })();
+    </script>
 </body>
 </html>
 
