@@ -240,7 +240,7 @@ export default function PortfolioHero() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              'Java (Spring Boot)', 'JavaScript (ES6+)', 'REST API Design', 'SQL & Databases',
+             'C++', 'Python', 'REST API Design', 'SQL & Databases',
               'ReactJS', 'Git & Version Control', 'Linux / Windows', 'Debugging & Docs',
             ].map((skill) => (
               <div
