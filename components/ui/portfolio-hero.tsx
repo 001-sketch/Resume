@@ -223,10 +223,9 @@ export default function PortfolioHero() {
           </h2>
           <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm">
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-             Hello I m Mike a Software Engineer with strong backend training and practical experience supporting
+             Hello, I m Mike a Software Engineer with strong backend training and practical experience supporting
               production systems in high-availability environments. Experienced in system logic, APIs, SQL databases,
-              and structured problem-solving. Adept at requirements gathering, troubleshooting complex issues,
-              documenting processes, and collaborating across technical and non-technical teams.
+              and structured problem-solving.
             </p>
           </div>
         </section>
