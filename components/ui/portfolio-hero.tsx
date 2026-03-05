@@ -202,8 +202,8 @@ export default function PortfolioHero() {
           <div className="flex-shrink-0">
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-blue-500/30 shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-                alt="Michael Chege profile photo"
+                src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=400&fit=crop&crop=entropy"
+                alt="Laptop workspace – portfolio hero"
                 fill
                 sizes="(max-width: 768px) 192px, 256px"
                 className="object-cover"
