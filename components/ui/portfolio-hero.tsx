@@ -298,6 +298,61 @@ export default function PortfolioHero() {
             className="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-400"
             style={{ fontFamily: 'var(--font-fira-code), monospace' }}
           >
+        {/* ── Experience ── */}
+        <h2
+          className="text-2xl font-bold mb-8 text-blue-600 dark:text-blue-400"
+          style={{ fontFamily: 'var(--font-fira-code), monospace' }}
+        >
+          // experience
+        </h2>
+
+        <div className="space-y-6 mb-16">
+          {EXPERIENCE.map((job) => (
+            <div
+              key={job.role}
+              className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3">
+                <div>
+                  <h3 className="text-lg font-semibold flex items-center gap-2">
+                    <Briefcase size={16} className="text-blue-500 flex-shrink-0" />
+                    {job.role}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm font-medium mt-0.5">
+                    {job.company}
+                  </p>
+                </div>
+                <div className="flex flex-col items-start sm:items-end gap-1 text-xs text-gray-500 dark:text-gray-500">
+                  <span className="inline-flex items-center gap-1">
+                    <Calendar size={12} />
+                    {job.period}
+                  </span>
+                  <span className="inline-flex items-center gap-1">
+                    <MapPin size={12} />
+                    {job.location}
+                  </span>
+                </div>
+              </div>
+              <ul className="space-y-1.5">
+                {job.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+                    <CheckCircle2 size={14} className="text-green-500 flex-shrink-0 mt-0.5" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* ── Education ── */}
+        <h2
+          className="text-2xl font-bold mb-8 text-blue-600 dark:text-blue-400"
+          style={{ fontFamily: 'var(--font-fira-code), monospace' }}
+        >
+          // education
+        </h2>
+     
             // projects
           </h2>
           <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm">
