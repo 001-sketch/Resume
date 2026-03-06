@@ -186,7 +186,7 @@ export default function PortfolioHero() {
                 GitHub
               </a>
               <a
-                href="https://linkedin.com/in/michael-chege"
+                href="https://www.linkedin.com/in/mike-c-71872a270?"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
