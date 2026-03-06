@@ -31,6 +31,40 @@ const SKILLS = [
   { icon: Globe, label: 'REST APIs', color: 'text-green-500' },
 ]
 
+const EXPERIENCE = [
+  {
+    role: 'Junior Software Engineer',
+    company: 'Freelance / Contract',
+    location: 'Remote',
+    period: '2024 – Present',
+    bullets: [
+      'Built and maintained RESTful APIs using Spring Boot and Node.js for various clients.',
+      'Designed relational database schemas and optimised SQL queries for PostgreSQL.',
+      'Delivered full-stack features using React and Next.js, collaborating via Git.',
+    ],
+  },
+  {
+    role: 'Software Engineering Intern',
+    company: 'Tech Start-up (Nairobi)',
+    location: 'Nairobi, Kenya',
+    period: '2023 – 2024',
+    bullets: [
+      'Assisted in developing and testing backend microservices with Java / Spring Boot.',
+      'Wrote unit and integration tests, increasing code coverage by 25%.',
+      'Participated in daily stand-ups, sprint planning, and code reviews.',
+    ],
+  },
+]
+
+const EDUCATION = [
+  {
+    degree: 'Bachelor of Science – Computer Science',
+    school: 'University of Nairobi',
+    location: 'Nairobi, Kenya',
+    period: '2019 – 2023',
+  },
+]
+
 export default function PortfolioHero() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [dark, setDark] = useState(false)
