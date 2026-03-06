@@ -30,8 +30,8 @@ const NAV_LINKS = [
 ]
 
 const SKILLS = [
-  { icon: Code2, label: 'Java / Spring Boot', color: 'text-blue-500' },
-  { icon: Terminal, label: 'JavaScript / TypeScript', color: 'text-yellow-500' },
+  { icon: Code2, label: 'C++', color: 'text-blue-500' },
+  { icon: Terminal, label: 'Python', color: 'text-yellow-500' },
   { icon: Database, label: 'SQL & Data Modeling', color: 'text-indigo-500' },
   { icon: Globe, label: 'REST APIs', color: 'text-green-500' },
 ]
