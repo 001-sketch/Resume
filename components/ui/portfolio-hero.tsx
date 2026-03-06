@@ -63,7 +63,7 @@ const EXPERIENCE = [
 
 const EDUCATION = [
   {
-    'Software Engineering',
+    role: 'Software Engineering',
     school: 'ALX Africa',
     location: 'Nairobi, Kenya',
   },
