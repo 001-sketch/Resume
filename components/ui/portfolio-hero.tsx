@@ -359,7 +359,7 @@ export default function PortfolioHero() {
                 <Github size={13} /> GitHub
               </a>
               <a
-                href="https://4k-wallpaper-app.vercel.app"
+                href="https://wallscape.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 hover:underline"
