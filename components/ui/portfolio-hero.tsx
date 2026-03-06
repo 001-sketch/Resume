@@ -63,10 +63,9 @@ const EXPERIENCE = [
 
 const EDUCATION = [
   {
-    degree: 'Bachelor of Science – Computer Science',
-    school: 'University of Nairobi',
+    'Software Engineering',
+    school: 'ALX Africa',
     location: 'Nairobi, Kenya',
-    period: '2019 – 2023',
   },
 ]
 
