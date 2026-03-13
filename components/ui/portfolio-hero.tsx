@@ -41,7 +41,7 @@ const EXPERIENCE = [
     role: 'Junior Software Engineer',
     company: 'Freelance / Contract',
     location: 'Remote',
-    period: '2024 – Present',
+    period: '2025 – Present',
     bullets: [
       'Built and maintained RESTful APIs using Spring Boot and Node.js for various clients.',
       'Designed relational database schemas and optimised SQL queries for PostgreSQL.',
@@ -52,7 +52,7 @@ const EXPERIENCE = [
     role: 'Software Engineering Intern',
     company: 'Tech Start-up (Nairobi)',
     location: 'Nairobi, Kenya',
-    period: '2023 – 2024',
+    period: '2024 – 2025',
     bullets: [
       'Assisted in developing and testing backend microservices with Java / Spring Boot.',
       'Wrote unit and integration tests, increasing code coverage by 25%.',
