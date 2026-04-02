@@ -54,7 +54,8 @@ const EXPERIENCE = [
     location: 'Nairobi, Kenya',
     period: '2024 – 2025',
     bullets: [
-      'Assisted in developing and testing backend microservices with Java / Spring Boot.',
+      'Developed and maintained full-stack features across frontend and backend using React, Next.js, and TypeScript, contributing to a cleaner and more responsive user experience.
+',
       'Wrote unit and integration tests, increasing code coverage by 25%.',
       'Participated in daily stand-ups, sprint planning, and code reviews.',
     ],
