@@ -15,7 +15,6 @@ import {
   Calendar,
   MapPin,
   CheckCircle2,
-  Download,
   Code2,
   Terminal,
   Database,
@@ -205,14 +204,7 @@ export default function PortfolioHero() {
                 <Mail size={15} />
                 Contact Me
               </a>
-              <a
-                href="/MikeResume.pdf"
-                download
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-semibold transition-colors"
-              >
-                <Download size={15} />
-                Download CV
-              </a>
+
               <a
                 href="https://github.com/001-sketch"
                 target="_blank"
@@ -240,8 +232,8 @@ export default function PortfolioHero() {
           <div className="flex-shrink-0">
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-blue-500/30 shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=400&fit=crop&crop=entropy"
-                alt="Laptop workspace – portfolio hero"
+                src="https://images.unsplash.com/_WEddfPLeeA?w=400&h=400&fit=crop&crop=entropy"
+                alt="Red suspension bridge over a river with city skyline"
                 fill
                 sizes="(max-width: 768px) 192px, 256px"
                 className="object-cover"
@@ -394,14 +386,7 @@ export default function PortfolioHero() {
                 <Mail size={16} />
                 mikechege171@gmail.com
               </a>
-              <a
-                href="/MikeResume.pdf"
-                download
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
-              >
-                <Download size={16} />
-                Download Resume
-              </a>
+
             </div>
           </div>
         </section>
