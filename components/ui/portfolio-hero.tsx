@@ -70,7 +70,7 @@ const EDUCATION = [
 
 export default function PortfolioHero() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [dark, setDark] = useState(false)
+  const [dark, setDark] = useState(true)
   const menuRef = useRef<HTMLDivElement>(null)
 
   // Close menu when clicking outside
@@ -232,8 +232,8 @@ export default function PortfolioHero() {
           <div className="flex-shrink-0">
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-blue-500/30 shadow-2xl">
               <Image
-                src="https://images.unsplash.com/_WEddfPLeeA?w=400&h=400&fit=crop&crop=entropy"
-                alt="Red suspension bridge over a river with city skyline"
+                src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&h=400&fit=crop&crop=entropy"
+                alt="City skyline with skyscrapers"
                 fill
                 sizes="(max-width: 768px) 192px, 256px"
                 className="object-cover"
