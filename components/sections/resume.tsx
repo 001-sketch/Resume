@@ -4,7 +4,9 @@ import {
   Calendar,
   MapPin,
   CheckCircle2,
+  Globe,
 } from 'lucide-react'
+import { PROJECTS } from '@/lib/projects'
 
 const EXPERIENCE = [
   {
@@ -88,6 +90,44 @@ export default function Resume() {
                   </li>
                 ))}
               </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* ── Projects ── */}
+        <h2
+          className="text-2xl font-bold mb-8 text-blue-600 dark:text-blue-400"
+          style={{ fontFamily: 'var(--font-fira-code), monospace' }}
+        >
+          // projects
+        </h2>
+
+        <div className="space-y-4 mb-16">
+          {PROJECTS.map((project) => (
+            <div
+              key={project.title}
+              className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <div>
+                  <h3 className="text-lg font-semibold flex items-center gap-2">
+                    <Globe size={16} className="text-blue-500 flex-shrink-0" />
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mt-0.5">
+                    {project.description}
+                  </p>
+                </div>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400 hover:underline flex-shrink-0"
+                >
+                  <Globe size={13} />
+                  {project.url.replace('https://', '')}
+                </a>
+              </div>
             </div>
           ))}
         </div>
