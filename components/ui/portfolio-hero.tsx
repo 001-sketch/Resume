@@ -204,7 +204,7 @@ export default function PortfolioHero() {
                         title={`${project.title} preview`}
                         src={project.url}
                         loading="lazy"
-                        sandbox="allow-scripts allow-forms allow-popups"
+                        sandbox="allow-scripts"
                         className="h-full w-full border-0"
                       />
                     </div>
