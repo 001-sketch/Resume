@@ -100,7 +100,7 @@ const INTENT_BLUEPRINT = [
   {
     title: "High-intent keyword clusters",
     description:
-      "Focus on transactional searches like web designer Kenya, landing page design, and UX strategy.",
+      "Focus on transactional searches like web designer in Kenya, landing page design, and UX strategy.",
   },
   {
     title: "Entity-first structure",

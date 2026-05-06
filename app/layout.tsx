@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Michael Chege is a Kenya-based web designer building conversion-focused websites, landing pages, and UX systems that improve bookings and enquiries.",
   applicationName: "ItsMikesPage",
   keywords: [
-    "web designer Kenya",
+    "web designer in Kenya",
     "conversion-focused web design",
     "landing page design",
     "UI/UX designer",
