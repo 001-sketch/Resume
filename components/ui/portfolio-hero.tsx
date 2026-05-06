@@ -3,10 +3,10 @@ import { PROJECTS } from "@/lib/projects";
 import { FAQS } from "@/lib/seo";
 
 const NAV_LINKS = [
-  { href: "#about", label: "About" },
-  { href: "#insights", label: "Insights" },
   { href: "#projects", label: "Work" },
   { href: "#services", label: "Services" },
+  { href: "#about", label: "About" },
+  { href: "#insights", label: "Insights" },
   { href: "#skills", label: "Skills" },
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
@@ -119,7 +119,7 @@ const INTENT_BLUEPRINT = [
   },
 ];
 
-const AI_PROMPT_COPY = `Analyze this portfolio content for high-intent keywords used by service businesses seeking web design help.
+const CONTENT_STRATEGY_PROMPT = `Analyze this portfolio content for high-intent keywords used by service businesses seeking web design help.
 Cluster keywords by search intent (transactional, commercial, informational), list supporting entities,
 and propose a logical H2/H3 outline that improves crawlability and rankings.
 Return the keyword clusters, entity list, and recommended FAQ questions.`;
@@ -301,7 +301,7 @@ export default function PortfolioHero() {
               <div className="space-y-4 md:col-span-7">
                 <div className="rounded-2xl border border-[color:var(--border)] bg-white p-6">
                   <p className="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">AI prompt</p>
-                  <p className="mt-3 text-sm text-[color:var(--muted)]">{AI_PROMPT_COPY}</p>
+                  <p className="mt-3 text-sm text-[color:var(--muted)]">{CONTENT_STRATEGY_PROMPT}</p>
                 </div>
                 <div className="grid gap-4 md:grid-cols-2">
                   {INTENT_BLUEPRINT.map((item) => (
