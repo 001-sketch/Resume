@@ -194,7 +194,7 @@ export default function PortfolioHero() {
                         <ArrowUpRight size={14} />
                       </a>
                     </div>
-                    <p className="mt-4 text-xs text-[color:var(--muted)] opacity-100 transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100">
+                    <p className="mt-4 text-xs text-[color:var(--muted)] opacity-100 transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
                       Outcome: {project.outcome}
                     </p>
                   </div>
