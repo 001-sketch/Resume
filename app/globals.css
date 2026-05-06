@@ -19,5 +19,5 @@ html {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent) 20%, white);
+  background: color-mix(in srgb, var(--accent) 20%, var(--background));
 }

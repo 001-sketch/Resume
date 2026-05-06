@@ -96,7 +96,7 @@ export default function PortfolioHero() {
                   />
                 </a>
                 <span className="text-sm text-[color:var(--muted)]">
-                  Available for new client work starting this month.
+                  Available for new client work.
                 </span>
               </div>
             </div>
@@ -204,6 +204,7 @@ export default function PortfolioHero() {
                         title={`${project.title} preview`}
                         src={project.url}
                         loading="lazy"
+                        sandbox="allow-scripts allow-forms allow-popups"
                         className="h-full w-full border-0"
                       />
                     </div>
