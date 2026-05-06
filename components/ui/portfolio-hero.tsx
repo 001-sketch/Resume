@@ -119,7 +119,7 @@ const INTENT_BLUEPRINT = [
   },
 ];
 
-const AI_PROMPT =
+const AI_PROMPT_COPY =
   "Analyze this portfolio content for high-intent keywords used by service businesses seeking web design help. " +
   "Cluster keywords by search intent (transactional, commercial, informational), list supporting entities, " +
   "and propose a logical H2/H3 outline that improves crawlability and rankings. " +
@@ -302,7 +302,7 @@ export default function PortfolioHero() {
               <div className="space-y-4 md:col-span-7">
                 <div className="rounded-2xl border border-[color:var(--border)] bg-white p-6">
                   <p className="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">AI prompt</p>
-                  <p className="mt-3 text-sm text-[color:var(--muted)]">{AI_PROMPT}</p>
+                  <p className="mt-3 text-sm text-[color:var(--muted)]">{AI_PROMPT_COPY}</p>
                 </div>
                 <div className="grid gap-4 md:grid-cols-2">
                   {INTENT_BLUEPRINT.map((item) => (
