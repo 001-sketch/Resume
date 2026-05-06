@@ -200,12 +200,11 @@ export default function PortfolioHero() {
                   </div>
                   <div className="md:col-span-7">
                     <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--background)]">
-                      <img
-                        src={project.image}
-                        alt={project.imageAlt}
-                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                      <iframe
+                        title={`${project.title} preview`}
+                        src={project.url}
                         loading="lazy"
-                        decoding="async"
+                        className="h-full w-full border-0"
                       />
                     </div>
                   </div>
@@ -295,17 +294,20 @@ export default function PortfolioHero() {
                   <ArrowUpRight size={14} />
                 </a>
                 <div className="flex flex-wrap gap-4 text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">
-                  {SOCIALS.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target={social.href.startsWith("http") ? "_blank" : undefined}
-                      rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="transition-colors duration-200 hover:text-[color:var(--accent)]"
-                    >
-                      {social.label}
-                    </a>
-                  ))}
+                  {SOCIALS.map((social) => {
+                    const isExternal = social.href.startsWith("http");
+                    return (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        target={isExternal ? "_blank" : undefined}
+                        rel={isExternal ? "noopener noreferrer" : undefined}
+                        className="transition-colors duration-200 hover:text-[color:var(--accent)]"
+                      >
+                        {social.label}
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </div>
