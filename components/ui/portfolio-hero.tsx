@@ -41,7 +41,7 @@ const SKILL_GROUPS = [
 
 const SOCIALS = [
   { label: "Email", href: "mailto:mikechege171@gmail.com" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/mike-c-71872a270?" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/mike-c-71872a270" },
   { label: "GitHub", href: "https://github.com/001-sketch" },
 ];
 
