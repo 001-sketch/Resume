@@ -1,406 +1,324 @@
-'use client'
-
-import { useState, useEffect, useRef } from 'react'
-import Image from 'next/image'
-import {
-  Menu,
-  X,
-  Sun,
-  Moon,
-  Github,
-  Linkedin,
-  Mail,
-  Briefcase,
-  GraduationCap,
-  Calendar,
-  MapPin,
-  CheckCircle2,
-  Code2,
-  Terminal,
-  Database,
-  Globe,
-} from 'lucide-react'
-import { PROJECTS } from '@/lib/projects'
+import { ArrowUpRight } from "lucide-react";
+import { PROJECTS } from "@/lib/projects";
 
 const NAV_LINKS = [
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#contact', label: 'Contact' },
-]
+  { href: "#projects", label: "Work" },
+  { href: "#services", label: "Services" },
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#contact", label: "Contact" },
+];
 
-const SKILLS = [
-  { icon: Code2, label: 'C++', color: 'text-blue-500' },
-  { icon: Terminal, label: 'Python', color: 'text-yellow-500' },
-  { icon: Database, label: 'SQL & Data Modeling', color: 'text-indigo-500' },
-  { icon: Globe, label: 'REST APIs', color: 'text-green-500' },
-]
-
-const EXPERIENCE = [
+const SERVICES = [
   {
-    role: 'Junior Software Engineer',
-    company: 'Freelance / Contract',
-    location: 'Remote',
-    period: '2025 – Present',
-    bullets: [
-      'Built and maintained RESTful APIs using Spring Boot and Node.js for various clients.',
-      'Designed relational database schemas and optimised SQL queries for PostgreSQL.',
-      'Delivered full-stack features using React and Next.js, collaborating via Git.',
-    ],
+    title: "Website Design",
+    description: "End-to-end website design with clear structure, hierarchy, and conversion in mind.",
   },
   {
-    role: 'Software Engineering Intern',
-    company: 'Tech Start-up (Nairobi)',
-    location: 'Nairobi, Kenya',
-    period: '2024 – 2025',
-    bullets: [
-      'Developed and maintained full-stack features across frontend and backend using React, Next.js, and TypeScript, contributing to a cleaner and more responsive user experience.',
-      'Wrote unit and integration tests, increasing code coverage by 25%.',
-      'Participated in daily stand-ups, sprint planning, and code reviews.',
-    ],
+    title: "Landing Pages",
+    description: "Focused pages for campaigns, launches, and offers that turn intent into action.",
   },
-]
-
-const EDUCATION = [
   {
-    role: 'Software Engineering',
-    school: 'ALX Africa',
-    location: 'Nairobi, Kenya',
+    title: "UI/UX Design",
+    description: "Product interfaces, flows, and design systems that feel simple and intuitive.",
   },
-]
+];
+
+const SKILL_GROUPS = [
+  {
+    title: "Design",
+    items: ["Figma", "UI/UX", "Design Systems", "Wireframing", "Prototyping"],
+  },
+  {
+    title: "Development",
+    items: ["HTML/CSS", "Responsive Builds", "Next.js", "Accessibility"],
+  },
+  {
+    title: "Tools",
+    items: ["Notion", "Framer", "Git", "Google Analytics"],
+  },
+];
+
+const SOCIALS = [
+  { label: "Email", href: "mailto:mikechege171@gmail.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/mike-c-71872a270" },
+  { label: "GitHub", href: "https://github.com/001-sketch" },
+];
 
 export default function PortfolioHero() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [dark, setDark] = useState(true)
-  const menuRef = useRef<HTMLDivElement>(null)
-
-  // Close menu when clicking outside
-  useEffect(() => {
-    if (!menuOpen) return
-    function handleClickOutside(e: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setMenuOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [menuOpen])
-
-  // Apply dark mode class to <html>
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', dark)
-  }, [dark])
-
   return (
-    <div
-      className="min-h-screen bg-slate-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300"
-      style={{ fontFamily: 'var(--font-antic), sans-serif' }}
-    >
-      {/* ── Navbar ── */}
-      <nav className="sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
-        <div className="mx-auto max-w-6xl flex items-center justify-between px-4 py-3">
-          {/* Logo */}
-          <span
-            className="text-lg font-bold tracking-tight text-blue-600 dark:text-blue-400"
-            style={{ fontFamily: 'var(--font-fira-code), monospace' }}
-          >
-            &lt;MikeChege /&gt;
-          </span>
+    <div className="min-h-screen bg-[color:var(--background)] text-[color:var(--foreground)]">
+      <header className="sticky top-0 z-40 border-b border-[color:var(--border)] bg-[color:var(--background)]/90 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="text-sm font-semibold tracking-[0.08em]">Michael Chege</span>
+            <span className="text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">
+              Web Designer
+            </span>
+          </div>
+          <nav className="flex flex-wrap gap-4 text-[0.7rem] uppercase tracking-[0.32em] text-[color:var(--muted)]">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="transition-colors duration-200 hover:text-[color:var(--accent)]"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </header>
 
-          {/* Desktop links */}
-          <ul className="hidden md:flex gap-6 text-sm font-medium">
-            {NAV_LINKS.map((l) => (
-              <li key={l.href}>
+      <main>
+        <section className="py-16 md:py-24">
+          <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-12 md:items-end">
+            <div className="md:col-span-8">
+              <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">
+                Designing for clarity
+              </p>
+              <h1 className="mt-5 text-4xl font-semibold leading-tight md:text-6xl">
+                I design clean, conversion-focused websites for modern brands.
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg text-[color:var(--muted)]">
+                Based in Kenya, I help service businesses and ambitious founders turn their message into a
+                focused, high-performing digital presence.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-4">
                 <a
-                  href={l.href}
-                  className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  href="#projects"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--accent)] px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-white transition-colors duration-200 hover:bg-[color:var(--foreground)]"
                 >
-                  {l.label}
+                  View Work
+                  <ArrowUpRight
+                    size={16}
+                    className="transition-transform duration-200 group-hover:translate-x-0.5"
+                  />
                 </a>
-              </li>
-            ))}
-          </ul>
-
-          {/* Theme toggle + hamburger */}
-          <div className="flex items-center gap-2">
-            <button
-              aria-label="Toggle theme"
-              onClick={() => setDark((d) => !d)}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            >
-              {dark ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
-
-            {/* Hamburger (mobile only) */}
-            <div className="md:hidden" ref={menuRef}>
-              <button
-                aria-label="Toggle menu"
-                aria-expanded={menuOpen}
-                onClick={() => setMenuOpen((o) => !o)}
-                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              >
-                {menuOpen ? <X size={20} /> : <Menu size={20} />}
-              </button>
-
-              {/* Mobile dropdown */}
-              {menuOpen && (
-                <div className="absolute right-4 top-14 w-48 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 py-2">
-                  {NAV_LINKS.map((l) => (
-                    <a
-                      key={l.href}
-                      href={l.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="block px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                    >
-                      {l.label}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* ── Hero ── */}
-      <main className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-        <div className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16">
-          {/* Text */}
-          <div className="flex-1 text-center md:text-left">
-            <p
-              className="text-sm font-semibold tracking-widest text-blue-600 dark:text-blue-400 uppercase mb-3"
-              style={{ fontFamily: 'var(--font-fira-code), monospace' }}
-            >
-              &gt;_ Hello, world!
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-              Michael Chege
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-medium mb-2">
-              Software Engineer
-            </p>
-            <p className="text-base text-gray-500 dark:text-gray-500 mb-8">
-             Limuru, Kenya
-            </p>
-
-            {/* Skills pills */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-10">
-              {SKILLS.map(({ icon: Icon, label, color }) => (
-                <span
-                  key={label}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm"
-                >
-                  <Icon size={13} className={color} />
-                  {label}
+                <span className="text-sm text-[color:var(--muted)]">
+                  Available for new client work.
                 </span>
-              ))}
-            </div>
-
-            {/* CTA row */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-3">
-              <a
-                href="mailto:mikechege171@gmail.com"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold transition-colors"
-              >
-                <Mail size={15} />
-                Contact Me
-              </a>
-
-              <a
-                href="https://github.com/001-sketch"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-semibold transition-colors"
-              >
-                <Github size={15} />
-                GitHub
-              </a>
-              <a
-                href="https://www.linkedin.com/in/mike-c-71872a270?"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-semibold transition-colors"
-              >
-                <Linkedin size={15} />
-                LinkedIn
-              </a>
-            </div>
-          </div>
-
-          {/* Profile image */}
-          <div className="flex-shrink-0">
-            <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-blue-500/30 shadow-2xl">
-              <Image
-                src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&h=400&fit=crop&crop=entropy"
-                alt="City skyline with skyscrapers"
-                fill
-                sizes="(max-width: 768px) 192px, 256px"
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* ── About ── */}
-        <section id="about" className="mt-24">
-          <h2
-            className="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-400"
-            style={{ fontFamily: 'var(--font-fira-code), monospace' }}
-          >
-            // about
-          </h2>
-          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm">
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-             Hello, I m Mike a Software Engineer with strong backend training and practical experience supporting
-              production systems in high-availability environments. Experienced in system logic, APIs, SQL databases,
-              and structured problem-solving.
-            </p>
-          </div>
-        </section>
-
-        {/* ── Skills ── */}
-        <section id="skills" className="mt-16">
-          <h2
-            className="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-400"
-            style={{ fontFamily: 'var(--font-fira-code), monospace' }}
-          >
-            // skills
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-             'C++', 'Python', 'REST API Design', 'SQL & Databases',
-              'ReactJS', 'Git & Version Control', 'Linux / Windows', 'Debugging & Docs',
-            ].map((skill) => (
-              <div
-                key={skill}
-                className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-4 text-center text-sm font-medium shadow-sm hover:shadow-md transition-shadow"
-              >
-                {skill}
               </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ── Experience ── */}
-        <section className="mt-16">
-          <h2
-            className="text-2xl font-bold mb-8 text-blue-600 dark:text-blue-400"
-            style={{ fontFamily: 'var(--font-fira-code), monospace' }}
-          >
-            // experience
-          </h2>
-          <div className="space-y-6 mb-16">
-            {EXPERIENCE.map((job) => (
-              <div
-                key={job.role}
-                className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm"
-              >
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3">
-                  <div>
-                    <h3 className="text-lg font-semibold flex items-center gap-2">
-                      <Briefcase size={16} className="text-blue-500 flex-shrink-0" />
-                      {job.role}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm font-medium mt-0.5">
-                      {job.company}
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-start sm:items-end gap-1 text-xs text-gray-500 dark:text-gray-500">
-                    <span className="inline-flex items-center gap-1">
-                      <Calendar size={12} />
-                      {job.period}
-                    </span>
-                    <span className="inline-flex items-center gap-1">
-                      <MapPin size={12} />
-                      {job.location}
-                    </span>
-                  </div>
-                </div>
-                <ul className="space-y-1.5">
-                  {job.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
-                      <CheckCircle2 size={14} className="text-green-500 flex-shrink-0 mt-0.5" />
-                      {b}
-                    </li>
-                  ))}
+            </div>
+            <div className="md:col-span-4">
+              <div className="rounded-2xl border border-[color:var(--border)] bg-white p-6">
+                <p className="text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">Focus</p>
+                <p className="mt-3 text-base font-semibold">
+                  Strategy-led websites built to convert and scale.
+                </p>
+                <ul className="mt-4 space-y-2 text-sm text-[color:var(--muted)]">
+                  <li>UX-first structure and messaging</li>
+                  <li>Visual systems with strong hierarchy</li>
+                  <li>Fast, responsive build delivery</li>
                 </ul>
               </div>
-            ))}
+            </div>
           </div>
         </section>
 
-        {/* ── Projects ── */}
-        <section id="projects" className="mt-16">
-          <h2
-            className="text-2xl font-bold mb-8 text-blue-600 dark:text-blue-400"
-            style={{ fontFamily: 'var(--font-fira-code), monospace' }}
-          >
-            // projects
-          </h2>
-          <div className="space-y-4 mb-16">
-            {PROJECTS.map((project) => (
-              <div
-                key={project.title}
-                className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm"
-              >
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                  <div>
-                    <h3 className="text-lg font-semibold flex items-center gap-2">
-                      <Globe size={16} className="text-blue-500 flex-shrink-0" />
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mt-0.5">
-                      {project.description}
+        <section id="about" className="border-t border-[color:var(--border)] py-16">
+          <div className="mx-auto grid max-w-6xl gap-8 px-4 md:grid-cols-12">
+            <div className="md:col-span-4">
+              <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">About</p>
+            </div>
+            <div className="space-y-3 text-lg text-[color:var(--muted)] md:col-span-8">
+              <p className="font-medium text-[color:var(--foreground)]">
+                ALX-trained web designer focused on clarity, rhythm, and conversion.
+              </p>
+              <p>
+                I translate business goals into page structure, user journeys, and interfaces that feel easy to
+                trust.
+              </p>
+              <p>
+                Recent work spans hospitality, dining, and fitness brands — with outcomes tied to bookings and
+                enquiries.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" className="border-t border-[color:var(--border)] py-16">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="grid gap-8 md:grid-cols-12 md:items-end">
+              <div className="md:col-span-5">
+                <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Selected Work</p>
+                <h2 className="mt-4 text-3xl font-semibold">
+                  Projects built around real business problems.
+                </h2>
+              </div>
+              <p className="text-lg text-[color:var(--muted)] md:col-span-7">
+                Each engagement starts with a clear goal and a focused design system. The result: websites that
+                feel deliberate and perform with intent.
+              </p>
+            </div>
+
+            <div className="mt-12 space-y-10">
+              {PROJECTS.map((project) => (
+                <article
+                  key={project.title}
+                  className="group grid gap-8 rounded-3xl border border-[color:var(--border)] bg-white p-6 transition-all duration-200 hover:border-[color:var(--foreground)]/20 hover:shadow-sm md:grid-cols-12 md:items-center md:p-8"
+                >
+                  <div className="md:col-span-5">
+                    <p className="text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">
+                      {project.summary}
+                    </p>
+                    <h3 className="mt-3 text-2xl font-semibold">{project.title}</h3>
+                    <dl className="mt-6 space-y-4 text-sm text-[color:var(--muted)]">
+                      <div>
+                        <dt className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--foreground)]">
+                          Problem
+                        </dt>
+                        <dd className="mt-2">{project.problem}</dd>
+                      </div>
+                      <div>
+                        <dt className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--foreground)]">
+                          Approach
+                        </dt>
+                        <dd className="mt-2">{project.approach}</dd>
+                      </div>
+                      <div>
+                        <dt className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--foreground)]">
+                          Tools
+                        </dt>
+                        <dd className="mt-2">{project.tools.join(", ")}</dd>
+                      </div>
+                    </dl>
+                    <div className="mt-6 flex items-center gap-3 text-sm">
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 font-semibold text-[color:var(--accent)] transition-colors duration-200 hover:text-[color:var(--foreground)]"
+                      >
+                        View live site
+                        <ArrowUpRight size={14} />
+                      </a>
+                    </div>
+                    <p className="mt-4 text-xs text-[color:var(--muted)] opacity-100 transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
+                      Outcome: {project.outcome}
                     </p>
                   </div>
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400 hover:underline flex-shrink-0"
-                  >
-                    <Globe size={13} />
-                    {project.url.replace('https://', '')}
-                  </a>
-                </div>
-              </div>
-            ))}
+                  <div className="md:col-span-7">
+                    <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--background)]">
+                      <iframe
+                        title={`${project.title} preview`}
+                        src={project.url}
+                        loading="lazy"
+                        sandbox="allow-scripts"
+                        className="h-full w-full border-0"
+                      />
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* ── Contact ── */}
-        <section id="contact" className="mt-16">
-          <h2
-            className="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-400"
-            style={{ fontFamily: 'var(--font-fira-code), monospace' }}
-          >
-            // contact
-          </h2>
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white text-center shadow-lg">
-            <p className="text-lg font-semibold mb-2">Open to backend-focused roles and collaboration.</p>
-            <p className="text-blue-100 mb-6">Reach out and let&apos;s build something great together.</p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a
-                href="mailto:mikechege171@gmail.com"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-              >
-                <Mail size={16} />
-                mikechege171@gmail.com
-              </a>
+        <section id="services" className="border-t border-[color:var(--border)] py-16">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="grid gap-8 md:grid-cols-12 md:items-end">
+              <div className="md:col-span-4">
+                <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Services</p>
+                <h2 className="mt-4 text-3xl font-semibold">What I deliver</h2>
+              </div>
+              <p className="text-lg text-[color:var(--muted)] md:col-span-8">
+                Designed to help your business stand out and convert.
+              </p>
+            </div>
 
+            <div className="mt-10 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white">
+              {SERVICES.map((service, index) => (
+                <div
+                  key={service.title}
+                  className={`flex flex-col gap-3 px-6 py-6 md:flex-row md:items-center md:justify-between md:gap-8 ${
+                    index === SERVICES.length - 1 ? "" : "border-b border-[color:var(--border)]"
+                  }`}
+                >
+                  <h3 className="text-lg font-semibold">{service.title}</h3>
+                  <p className="max-w-2xl text-sm text-[color:var(--muted)]">
+                    {service.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" className="border-t border-[color:var(--border)] py-16">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="grid gap-8 md:grid-cols-12 md:items-end">
+              <div className="md:col-span-4">
+                <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Skills</p>
+                <h2 className="mt-4 text-3xl font-semibold">Crafted with intention</h2>
+              </div>
+              <p className="text-lg text-[color:var(--muted)] md:col-span-8">
+                A focused stack that keeps the work lean, fast, and visually consistent.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-8 md:grid-cols-3">
+              {SKILL_GROUPS.map((group) => (
+                <div key={group.title} className="space-y-4">
+                  <h3 className="text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">
+                    {group.title}
+                  </h3>
+                  <ul className="space-y-2 text-sm">
+                    {group.items.map((item) => (
+                      <li key={item} className="font-medium">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="border-t border-[color:var(--border)] py-16">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="flex flex-col gap-8 rounded-2xl border border-[color:var(--border)] bg-white p-8 md:flex-row md:items-center md:justify-between">
+              <div className="space-y-3">
+                <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Contact</p>
+                <h2 className="text-3xl font-semibold">Let&apos;s build something that works.</h2>
+                <p className="text-sm text-[color:var(--muted)]">
+                  Share your goals, timeline, and budget and I&apos;ll respond within 48 hours.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <a
+                  href="mailto:mikechege171@gmail.com"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--accent)] transition-colors duration-200 hover:text-[color:var(--foreground)]"
+                >
+                  mikechege171@gmail.com
+                  <ArrowUpRight size={14} />
+                </a>
+                <div className="flex flex-wrap gap-4 text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">
+                  {SOCIALS.map((social) => {
+                    const isExternal = social.href.startsWith("http");
+                    return (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        target={isExternal ? "_blank" : undefined}
+                        rel={isExternal ? "noopener noreferrer" : undefined}
+                        className="transition-colors duration-200 hover:text-[color:var(--accent)]"
+                      >
+                        {social.label}
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </section>
       </main>
 
-      {/* ── Footer ── */}
-      <footer className="text-center py-8 text-sm text-gray-500 dark:text-gray-500 border-t border-gray-200 dark:border-gray-800 mt-16">
-        <span style={{ fontFamily: 'var(--font-fira-code), monospace' }}>
-          &copy; 2026 Michael Chege. All rights reserved.
-        </span>
+      <footer className="border-t border-[color:var(--border)] py-10 text-center text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">
+        &copy; 2026 Michael Chege. All rights reserved.
       </footer>
     </div>
-  )
+  );
 }
