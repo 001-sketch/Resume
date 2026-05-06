@@ -24,7 +24,6 @@ import {
 const NAV_LINKS = [
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -328,42 +327,6 @@ export default function PortfolioHero() {
                 </ul>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* ── Projects ── */}
-        <section id="projects" className="mt-16">
-          <h2
-            className="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-400"
-            style={{ fontFamily: 'var(--font-fira-code), monospace' }}
-          >
-            // projects
-          </h2>
-          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm">
-            <div className="flex flex-wrap items-center gap-3 mb-2">
-              <h3 className="text-lg font-semibold">4K Wallpaper App</h3>
-              <a
-                href="https://github.com/001-sketch/4k-wallpaper-app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 hover:underline"
-              >
-                <Github size={13} /> GitHub
-              </a>
-              <a
-                href="https://wallscape.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 hover:underline"
-              >
-                <Globe size={13} /> Live Demo
-              </a>
-            </div>
-            <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
-              Modern wallpaper discovery app built with Next.js 14, React 18, TypeScript, Tailwind CSS,
-              Zustand, and PostgreSQL (Neon). Features secure auth (bcrypt, JWT, HTTP-only cookies), wallpaper
-              search/categories/favorites, and user collections.
-            </p>
           </div>
         </section>
 
