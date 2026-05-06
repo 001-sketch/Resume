@@ -1,14 +1,11 @@
 import { ArrowUpRight } from "lucide-react";
 import { PROJECTS } from "@/lib/projects";
-import { FAQS } from "@/lib/seo";
 
 const NAV_LINKS = [
   { href: "#projects", label: "Work" },
   { href: "#services", label: "Services" },
   { href: "#about", label: "About" },
-  { href: "#insights", label: "Insights" },
   { href: "#skills", label: "Skills" },
-  { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -41,88 +38,6 @@ const SKILL_GROUPS = [
     items: ["Notion", "Framer", "Git", "Google Analytics"],
   },
 ];
-
-const AUTHORITY_PILLARS = [
-  {
-    title: "Service Business Website Design",
-    description:
-      "Messaging-first websites for hospitality, fitness, and service brands that need clear booking paths.",
-    keywords: ["web designer in Kenya", "service business websites", "lead generation design"],
-  },
-  {
-    title: "Landing Page Optimization",
-    description:
-      "Campaign-ready landing pages built around intent, trust signals, and conversion-focused layouts.",
-    keywords: ["landing page design", "conversion rate optimization", "campaign pages"],
-  },
-  {
-    title: "UX + Core Web Vitals",
-    description:
-      "Fast, stable, and accessible interfaces that score well on LCP, INP, and CLS benchmarks.",
-    keywords: ["Core Web Vitals", "UX design strategy", "performance optimization"],
-  },
-];
-
-const ENTITY_FOCUS = [
-  "Web design strategy",
-  "UI/UX systems",
-  "Conversion rate optimization",
-  "Core Web Vitals",
-  "Information architecture",
-  "Local SEO for service businesses",
-  "Booking and enquiry funnels",
-];
-
-const CORE_WEB_VITALS = [
-  {
-    label: "LCP target",
-    value: "≤ 2.5s",
-    description: "Hero content loads quickly on mobile-first layouts.",
-  },
-  {
-    label: "INP target",
-    value: "≤ 200ms",
-    description: "Fast interactions for pricing, menus, and booking flows.",
-  },
-  {
-    label: "CLS target",
-    value: "≤ 0.1",
-    description: "Stable layouts that build trust and reduce drop-off.",
-  },
-  {
-    label: "Lean build",
-    value: "Performance budget",
-    description: "Optimized assets, lazy-loaded embeds, and clean component structure.",
-  },
-];
-
-const INTENT_BLUEPRINT = [
-  {
-    title: "High-intent keyword clusters",
-    description:
-      "Focus on transactional searches like web designer in Kenya, landing page design, and UX strategy.",
-  },
-  {
-    title: "Entity-first structure",
-    description:
-      "Connect services, industries, and outcomes to reinforce E-E-A-T signals for crawlers.",
-  },
-  {
-    title: "Informational gain",
-    description:
-      "Add measurable outcomes, performance targets, and practical next steps to improve ranking value.",
-  },
-  {
-    title: "Generative AI readiness",
-    description:
-      "Use FAQ, schema markup, and scannable summaries for better visibility in AI search engines.",
-  },
-];
-
-const CONTENT_STRATEGY_PROMPT = `Analyze this portfolio content for high-intent keywords used by service businesses seeking web design help.
-Cluster keywords by search intent (transactional, commercial, informational), list supporting entities,
-and propose a logical H2/H3 outline that improves crawlability and rankings.
-Return the keyword clusters, entity list, and recommended FAQ questions.`;
 
 const SOCIALS = [
   { label: "Email", href: "mailto:mikechege171@gmail.com" },
@@ -218,103 +133,6 @@ export default function PortfolioHero() {
                 Recent work spans hospitality, dining, and fitness brands — with outcomes tied to bookings and
                 enquiries.
               </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="insights" className="border-t border-[color:var(--border)] py-16">
-          <div className="mx-auto max-w-6xl px-4">
-            <div className="grid gap-8 md:grid-cols-12 md:items-end">
-              <div className="md:col-span-5">
-                <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Authority Hub</p>
-                <h2 className="mt-4 text-3xl font-semibold">
-                  Topical authority for web design, UX, and growth.
-                </h2>
-              </div>
-              <p className="text-lg text-[color:var(--muted)] md:col-span-7">
-                Structured around high-intent keywords, entity-driven signals, and measurable performance targets
-                to help itsmikespage.tech rank for 2026 search demand.
-              </p>
-            </div>
-
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {AUTHORITY_PILLARS.map((pillar) => (
-                <article
-                  key={pillar.title}
-                  className="rounded-2xl border border-[color:var(--border)] bg-white p-6"
-                >
-                  <h3 className="text-lg font-semibold">{pillar.title}</h3>
-                  <p className="mt-3 text-sm text-[color:var(--muted)]">{pillar.description}</p>
-                  <p className="mt-4 text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">
-                    High-intent keywords
-                  </p>
-                  <ul className="mt-3 space-y-2 text-sm">
-                    {pillar.keywords.map((keyword) => (
-                      <li key={keyword} className="font-medium">
-                        {keyword}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
-            </div>
-
-            <div className="mt-12 grid gap-6 md:grid-cols-12">
-              <div className="rounded-2xl border border-[color:var(--border)] bg-white p-6 md:col-span-5">
-                <p className="text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">Entity focus</p>
-                <h3 className="mt-4 text-2xl font-semibold">Entities that support E-E-A-T signals.</h3>
-                <ul className="mt-4 space-y-2 text-sm text-[color:var(--muted)]">
-                  {ENTITY_FOCUS.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="grid gap-4 md:col-span-7 md:grid-cols-2">
-                {CORE_WEB_VITALS.map((metric) => (
-                  <div
-                    key={metric.label}
-                    className="rounded-2xl border border-[color:var(--border)] bg-white p-6"
-                  >
-                    <p className="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">
-                      {metric.label}
-                    </p>
-                    <p className="mt-3 text-2xl font-semibold">{metric.value}</p>
-                    <p className="mt-2 text-sm text-[color:var(--muted)]">{metric.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-12 grid gap-6 md:grid-cols-12">
-              <div className="md:col-span-5">
-                <p className="text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">
-                  Search intent blueprint
-                </p>
-                <h3 className="mt-4 text-2xl font-semibold">
-                  AI-assisted prompt that shapes the content hierarchy.
-                </h3>
-                <p className="mt-3 text-sm text-[color:var(--muted)]">
-                  This prompt keeps the structure keyword-rich while aligning with user intent and generative AI
-                  extraction.
-                </p>
-              </div>
-              <div className="space-y-4 md:col-span-7">
-                <div className="rounded-2xl border border-[color:var(--border)] bg-white p-6">
-                  <p className="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">AI prompt</p>
-                  <p className="mt-3 text-sm text-[color:var(--muted)]">{CONTENT_STRATEGY_PROMPT}</p>
-                </div>
-                <div className="grid gap-4 md:grid-cols-2">
-                  {INTENT_BLUEPRINT.map((item) => (
-                    <div
-                      key={item.title}
-                      className="rounded-2xl border border-[color:var(--border)] bg-white p-5"
-                    >
-                      <h4 className="text-sm font-semibold">{item.title}</h4>
-                      <p className="mt-2 text-sm text-[color:var(--muted)]">{item.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -453,32 +271,6 @@ export default function PortfolioHero() {
                     ))}
                   </ul>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="faq" className="border-t border-[color:var(--border)] py-16">
-          <div className="mx-auto max-w-6xl px-4">
-            <div className="grid gap-8 md:grid-cols-12 md:items-end">
-              <div className="md:col-span-4">
-                <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">FAQ</p>
-                <h2 className="mt-4 text-3xl font-semibold">Answers to common web design questions.</h2>
-              </div>
-              <p className="text-lg text-[color:var(--muted)] md:col-span-8">
-                Clear, structured responses designed for search snippets, AI summaries, and quick decision-making.
-              </p>
-            </div>
-
-            <div className="mt-10 space-y-6">
-              {FAQS.map((faq) => (
-                <article
-                  key={faq.question}
-                  className="rounded-2xl border border-[color:var(--border)] bg-white p-6"
-                >
-                  <h3 className="text-lg font-semibold">{faq.question}</h3>
-                  <p className="mt-3 text-sm text-[color:var(--muted)]">{faq.answer}</p>
-                </article>
               ))}
             </div>
           </div>
