@@ -119,11 +119,10 @@ const INTENT_BLUEPRINT = [
   },
 ];
 
-const AI_PROMPT_COPY =
-  "Analyze this portfolio content for high-intent keywords used by service businesses seeking web design help. " +
-  "Cluster keywords by search intent (transactional, commercial, informational), list supporting entities, " +
-  "and propose a logical H2/H3 outline that improves crawlability and rankings. " +
-  "Return the keyword clusters, entity list, and recommended FAQ questions.";
+const AI_PROMPT_COPY = `Analyze this portfolio content for high-intent keywords used by service businesses seeking web design help.
+Cluster keywords by search intent (transactional, commercial, informational), list supporting entities,
+and propose a logical H2/H3 outline that improves crawlability and rankings.
+Return the keyword clusters, entity list, and recommended FAQ questions.`;
 
 const SOCIALS = [
   { label: "Email", href: "mailto:mikechege171@gmail.com" },
