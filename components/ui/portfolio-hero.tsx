@@ -112,7 +112,7 @@ export default function PortfolioHero() {
                   Open Resume
                   <ArrowUpRight size={16} />
                 </a>
-                <span className="text-sm text-[color:var(--muted)]">
+                <span className="text-sm text-white/65">
                   Available for new client work.
                 </span>
               </div>
@@ -297,7 +297,7 @@ export default function PortfolioHero() {
 
             <div className="mt-10 grid gap-8 md:grid-cols-3">
               {SKILL_GROUPS.map((group) => (
-                <div key={group.title} className="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div key={group.title} className="space-y-4">
                   <h3 className="text-xs uppercase tracking-[0.32em] text-white/55">
                     {group.title}
                   </h3>
