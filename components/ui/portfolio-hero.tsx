@@ -45,27 +45,37 @@ const SOCIALS = [
   { label: "GitHub", href: "https://github.com/001-sketch" },
 ];
 
+const RESUME_DETAILS = [
+  "ALX-trained web designer focused on clarity, rhythm, and conversion.",
+  "Based in Kenya and open to client projects.",
+  "Designs websites around trust, structure, and user flow.",
+  "Recent portfolio work spans hospitality, dining, and fitness brands.",
+];
+
 export default function PortfolioHero() {
   return (
-    <div className="min-h-screen bg-[color:var(--background)] text-[color:var(--foreground)]">
-      <header className="sticky top-0 z-40 border-b border-[color:var(--border)] bg-[color:var(--background)]/90 backdrop-blur">
+    <div className="min-h-screen bg-[#0d1015] text-[#f5f5f5]">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0d1015]/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="text-sm font-semibold tracking-[0.08em]">Michael Chege</span>
-            <span className="text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">
+            <span className="text-sm font-semibold tracking-[0.08em] text-white">Michael Chege</span>
+            <span className="text-xs uppercase tracking-[0.32em] text-white/60">
               Web Designer
             </span>
           </div>
-          <nav className="flex flex-wrap gap-4 text-[0.7rem] uppercase tracking-[0.32em] text-[color:var(--muted)]">
+          <nav className="flex flex-wrap gap-4 text-[0.7rem] uppercase tracking-[0.32em] text-white/60">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="transition-colors duration-200 hover:text-[color:var(--accent)]"
+                className="transition-colors duration-200 hover:text-[#67e8f9]"
               >
                 {link.label}
               </a>
             ))}
+            <a href="/MikeResume.pdf" className="transition-colors duration-200 hover:text-[#67e8f9]">
+              Resume PDF
+            </a>
           </nav>
         </div>
       </header>
@@ -74,20 +84,18 @@ export default function PortfolioHero() {
         <section className="py-16 md:py-24">
           <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-12 md:items-end">
             <div className="md:col-span-8">
-              <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">
-                Designing for clarity
-              </p>
-              <h1 className="mt-5 text-4xl font-semibold leading-tight md:text-6xl">
-                I design clean, conversion-focused websites for modern brands.
+              <p className="text-xs uppercase tracking-[0.4em] text-white/55">Resume + Portfolio</p>
+              <h1 className="mt-5 text-4xl font-semibold leading-tight text-white md:text-6xl">
+                Conversion-focused web designer for modern brands.
               </h1>
-              <p className="mt-6 max-w-2xl text-lg text-[color:var(--muted)]">
+              <p className="mt-6 max-w-2xl text-lg text-white/75">
                 Based in Kenya, I help service businesses and ambitious founders turn their message into a
                 focused, high-performing digital presence.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <a
                   href="#projects"
-                  className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--accent)] px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-white transition-colors duration-200 hover:bg-[color:var(--foreground)]"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[#67e8f9] px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-[#0d1015] transition-colors duration-200 hover:bg-white"
                 >
                   View Work
                   <ArrowUpRight
@@ -95,18 +103,27 @@ export default function PortfolioHero() {
                     className="transition-transform duration-200 group-hover:translate-x-0.5"
                   />
                 </a>
+                <a
+                  href="/MikeResume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-white transition-colors duration-200 hover:border-white hover:bg-white/10"
+                >
+                  Open Resume
+                  <ArrowUpRight size={16} />
+                </a>
                 <span className="text-sm text-[color:var(--muted)]">
                   Available for new client work.
                 </span>
               </div>
             </div>
             <div className="md:col-span-4">
-              <div className="rounded-2xl border border-[color:var(--border)] bg-white p-6">
-                <p className="text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">Focus</p>
-                <p className="mt-3 text-base font-semibold">
+              <div className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-sm">
+                <p className="text-xs uppercase tracking-[0.32em] text-white/55">Focus</p>
+                <p className="mt-3 text-base font-semibold text-white">
                   Strategy-led websites built to convert and scale.
                 </p>
-                <ul className="mt-4 space-y-2 text-sm text-[color:var(--muted)]">
+                <ul className="mt-4 space-y-2 text-sm text-white/70">
                   <li>UX-first structure and messaging</li>
                   <li>Visual systems with strong hierarchy</li>
                   <li>Fast, responsive build delivery</li>
@@ -116,13 +133,13 @@ export default function PortfolioHero() {
           </div>
         </section>
 
-        <section id="about" className="border-t border-[color:var(--border)] py-16">
+        <section id="about" className="border-t border-white/10 py-16">
           <div className="mx-auto grid max-w-6xl gap-8 px-4 md:grid-cols-12">
             <div className="md:col-span-4">
-              <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">About</p>
+              <p className="text-xs uppercase tracking-[0.4em] text-white/55">About</p>
             </div>
-            <div className="space-y-3 text-lg text-[color:var(--muted)] md:col-span-8">
-              <p className="font-medium text-[color:var(--foreground)]">
+            <div className="space-y-3 text-lg text-white/75 md:col-span-8">
+              <p className="font-medium text-white">
                 ALX-trained web designer focused on clarity, rhythm, and conversion.
               </p>
               <p>
@@ -137,16 +154,37 @@ export default function PortfolioHero() {
           </div>
         </section>
 
-        <section id="projects" className="border-t border-[color:var(--border)] py-16">
+        <section className="border-t border-white/10 py-16">
           <div className="mx-auto max-w-6xl px-4">
             <div className="grid gap-8 md:grid-cols-12 md:items-end">
               <div className="md:col-span-5">
-                <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Selected Work</p>
-                <h2 className="mt-4 text-3xl font-semibold">
+                <p className="text-xs uppercase tracking-[0.4em] text-white/55">Resume Details</p>
+                <h2 className="mt-4 text-3xl font-semibold text-white">What’s in my resume</h2>
+              </div>
+              <p className="text-lg text-white/75 md:col-span-7">
+                Keeping all core details in one section so recruiters and clients can scan quickly.
+              </p>
+            </div>
+            <ul className="mt-10 grid gap-4 md:grid-cols-2">
+              {RESUME_DETAILS.map((detail) => (
+                <li key={detail} className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-white/75">
+                  {detail}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section id="projects" className="border-t border-white/10 py-16">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="grid gap-8 md:grid-cols-12 md:items-end">
+              <div className="md:col-span-5">
+                <p className="text-xs uppercase tracking-[0.4em] text-white/55">Selected Work</p>
+                <h2 className="mt-4 text-3xl font-semibold text-white">
                   Projects built around real business problems.
                 </h2>
               </div>
-              <p className="text-lg text-[color:var(--muted)] md:col-span-7">
+              <p className="text-lg text-white/75 md:col-span-7">
                 Each engagement starts with a clear goal and a focused design system. The result: websites that
                 feel deliberate and perform with intent.
               </p>
@@ -156,28 +194,28 @@ export default function PortfolioHero() {
               {PROJECTS.map((project) => (
                 <article
                   key={project.title}
-                  className="group grid gap-8 rounded-3xl border border-[color:var(--border)] bg-white p-6 transition-all duration-200 hover:border-[color:var(--foreground)]/20 hover:shadow-sm md:grid-cols-12 md:items-center md:p-8"
+                  className="group grid gap-8 rounded-3xl border border-white/10 bg-white/5 p-6 transition-all duration-200 hover:border-white/25 md:grid-cols-12 md:items-center md:p-8"
                 >
                   <div className="md:col-span-5">
-                    <p className="text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">
+                    <p className="text-xs uppercase tracking-[0.32em] text-white/55">
                       {project.summary}
                     </p>
-                    <h3 className="mt-3 text-2xl font-semibold">{project.title}</h3>
-                    <dl className="mt-6 space-y-4 text-sm text-[color:var(--muted)]">
+                    <h3 className="mt-3 text-2xl font-semibold text-white">{project.title}</h3>
+                    <dl className="mt-6 space-y-4 text-sm text-white/75">
                       <div>
-                        <dt className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--foreground)]">
+                        <dt className="text-xs font-semibold uppercase tracking-[0.28em] text-white">
                           Problem
                         </dt>
                         <dd className="mt-2">{project.problem}</dd>
                       </div>
                       <div>
-                        <dt className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--foreground)]">
+                        <dt className="text-xs font-semibold uppercase tracking-[0.28em] text-white">
                           Approach
                         </dt>
                         <dd className="mt-2">{project.approach}</dd>
                       </div>
                       <div>
-                        <dt className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--foreground)]">
+                        <dt className="text-xs font-semibold uppercase tracking-[0.28em] text-white">
                           Tools
                         </dt>
                         <dd className="mt-2">{project.tools.join(", ")}</dd>
@@ -188,18 +226,18 @@ export default function PortfolioHero() {
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 font-semibold text-[color:var(--accent)] transition-colors duration-200 hover:text-[color:var(--foreground)]"
+                        className="inline-flex items-center gap-2 font-semibold text-[#67e8f9] transition-colors duration-200 hover:text-white"
                       >
                         View live site
                         <ArrowUpRight size={14} />
                       </a>
                     </div>
-                    <p className="mt-4 text-xs text-[color:var(--muted)] opacity-100 transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
+                    <p className="mt-4 text-xs text-white/60 opacity-100 transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
                       Outcome: {project.outcome}
                     </p>
                   </div>
                   <div className="md:col-span-7">
-                    <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--background)]">
+                    <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-[#111722]">
                       <iframe
                         title={`${project.title} preview`}
                         src={project.url}
@@ -215,28 +253,28 @@ export default function PortfolioHero() {
           </div>
         </section>
 
-        <section id="services" className="border-t border-[color:var(--border)] py-16">
+        <section id="services" className="border-t border-white/10 py-16">
           <div className="mx-auto max-w-6xl px-4">
             <div className="grid gap-8 md:grid-cols-12 md:items-end">
               <div className="md:col-span-4">
-                <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Services</p>
-                <h2 className="mt-4 text-3xl font-semibold">What I deliver</h2>
+                <p className="text-xs uppercase tracking-[0.4em] text-white/55">Services</p>
+                <h2 className="mt-4 text-3xl font-semibold text-white">What I deliver</h2>
               </div>
-              <p className="text-lg text-[color:var(--muted)] md:col-span-8">
+              <p className="text-lg text-white/75 md:col-span-8">
                 Designed to help your business stand out and convert.
               </p>
             </div>
 
-            <div className="mt-10 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white">
+            <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
               {SERVICES.map((service, index) => (
                 <div
                   key={service.title}
                   className={`flex flex-col gap-3 px-6 py-6 md:flex-row md:items-center md:justify-between md:gap-8 ${
-                    index === SERVICES.length - 1 ? "" : "border-b border-[color:var(--border)]"
+                    index === SERVICES.length - 1 ? "" : "border-b border-white/10"
                   }`}
                 >
-                  <h3 className="text-lg font-semibold">{service.title}</h3>
-                  <p className="max-w-2xl text-sm text-[color:var(--muted)]">
+                  <h3 className="text-lg font-semibold text-white">{service.title}</h3>
+                  <p className="max-w-2xl text-sm text-white/75">
                     {service.description}
                   </p>
                 </div>
@@ -245,27 +283,27 @@ export default function PortfolioHero() {
           </div>
         </section>
 
-        <section id="skills" className="border-t border-[color:var(--border)] py-16">
+        <section id="skills" className="border-t border-white/10 py-16">
           <div className="mx-auto max-w-6xl px-4">
             <div className="grid gap-8 md:grid-cols-12 md:items-end">
               <div className="md:col-span-4">
-                <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Skills</p>
-                <h2 className="mt-4 text-3xl font-semibold">Crafted with intention</h2>
+                <p className="text-xs uppercase tracking-[0.4em] text-white/55">Skills</p>
+                <h2 className="mt-4 text-3xl font-semibold text-white">Crafted with intention</h2>
               </div>
-              <p className="text-lg text-[color:var(--muted)] md:col-span-8">
+              <p className="text-lg text-white/75 md:col-span-8">
                 A focused stack that keeps the work lean, fast, and visually consistent.
               </p>
             </div>
 
             <div className="mt-10 grid gap-8 md:grid-cols-3">
               {SKILL_GROUPS.map((group) => (
-                <div key={group.title} className="space-y-4">
-                  <h3 className="text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">
+                <div key={group.title} className="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-5">
+                  <h3 className="text-xs uppercase tracking-[0.32em] text-white/55">
                     {group.title}
                   </h3>
                   <ul className="space-y-2 text-sm">
                     {group.items.map((item) => (
-                      <li key={item} className="font-medium">
+                      <li key={item} className="font-medium text-white">
                         {item}
                       </li>
                     ))}
@@ -276,25 +314,25 @@ export default function PortfolioHero() {
           </div>
         </section>
 
-        <section id="contact" className="border-t border-[color:var(--border)] py-16">
+        <section id="contact" className="border-t border-white/10 py-16">
           <div className="mx-auto max-w-6xl px-4">
-            <div className="flex flex-col gap-8 rounded-2xl border border-[color:var(--border)] bg-white p-8 md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-col gap-8 rounded-2xl border border-white/10 bg-white/5 p-8 md:flex-row md:items-center md:justify-between">
               <div className="space-y-3">
-                <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Contact</p>
-                <h2 className="text-3xl font-semibold">Let&apos;s build something that works.</h2>
-                <p className="text-sm text-[color:var(--muted)]">
+                <p className="text-xs uppercase tracking-[0.4em] text-white/55">Contact</p>
+                <h2 className="text-3xl font-semibold text-white">Let&apos;s build something that works.</h2>
+                <p className="text-sm text-white/75">
                   Share your goals, timeline, and budget and I&apos;ll respond within 48 hours.
                 </p>
               </div>
               <div className="space-y-4">
                 <a
                   href="mailto:mikechege171@gmail.com"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--accent)] transition-colors duration-200 hover:text-[color:var(--foreground)]"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#67e8f9] transition-colors duration-200 hover:text-white"
                 >
                   mikechege171@gmail.com
                   <ArrowUpRight size={14} />
                 </a>
-                <div className="flex flex-wrap gap-4 text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">
+                <div className="flex flex-wrap gap-4 text-xs uppercase tracking-[0.28em] text-white/55">
                   {SOCIALS.map((social) => {
                     const isExternal = social.href.startsWith("http");
                     return (
@@ -303,7 +341,7 @@ export default function PortfolioHero() {
                         href={social.href}
                         target={isExternal ? "_blank" : undefined}
                         rel={isExternal ? "noopener noreferrer" : undefined}
-                        className="transition-colors duration-200 hover:text-[color:var(--accent)]"
+                        className="transition-colors duration-200 hover:text-[#67e8f9]"
                       >
                         {social.label}
                       </a>
@@ -316,7 +354,7 @@ export default function PortfolioHero() {
         </section>
       </main>
 
-      <footer className="border-t border-[color:var(--border)] py-10 text-center text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">
+      <footer className="border-t border-white/10 py-10 text-center text-xs uppercase tracking-[0.32em] text-white/55">
         &copy; 2026 Michael Chege. All rights reserved.
       </footer>
     </div>
