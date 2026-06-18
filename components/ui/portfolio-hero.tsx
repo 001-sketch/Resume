@@ -107,7 +107,7 @@ export default function PortfolioHero() {
             </div>
             <div className="space-y-3 text-lg text-[color:var(--muted)] md:col-span-8">
               <p className="font-medium text-[color:var(--foreground)]">
-                ALX-trained web designer focused on clarity, rhythm, and conversion.
+                Web designer focused on clarity, rhythm, and conversion.
               </p>
               <p>
                 I translate business goals into page structure, user journeys, and interfaces that feel easy to
