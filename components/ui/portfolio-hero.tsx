@@ -3,25 +3,9 @@ import { PROJECTS } from "@/lib/projects";
 
 const NAV_LINKS = [
   { href: "#projects", label: "Work" },
-  { href: "#services", label: "Services" },
   { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
-];
-
-const SERVICES = [
-  {
-    title: "Website Design",
-    description: "End-to-end website design with clear structure, hierarchy, and conversion in mind.",
-  },
-  {
-    title: "Landing Pages",
-    description: "Focused pages for campaigns, launches, and offers that turn intent into action.",
-  },
-  {
-    title: "UI/UX Design",
-    description: "Product interfaces, flows, and design systems that feel simple and intuitive.",
-  },
+  { href: "#skills", label: "Skills" },
 ];
 
 const SKILL_GROUPS = [
@@ -215,67 +199,6 @@ export default function PortfolioHero() {
           </div>
         </section>
 
-        <section id="services" className="border-t border-[color:var(--border)] py-16">
-          <div className="mx-auto max-w-6xl px-4">
-            <div className="grid gap-8 md:grid-cols-12 md:items-end">
-              <div className="md:col-span-4">
-                <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Services</p>
-                <h2 className="mt-4 text-3xl font-semibold">What I deliver</h2>
-              </div>
-              <p className="text-lg text-[color:var(--muted)] md:col-span-8">
-                Designed to help your business stand out and convert.
-              </p>
-            </div>
-
-            <div className="mt-10 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white">
-              {SERVICES.map((service, index) => (
-                <div
-                  key={service.title}
-                  className={`flex flex-col gap-3 px-6 py-6 md:flex-row md:items-center md:justify-between md:gap-8 ${
-                    index === SERVICES.length - 1 ? "" : "border-b border-[color:var(--border)]"
-                  }`}
-                >
-                  <h3 className="text-lg font-semibold">{service.title}</h3>
-                  <p className="max-w-2xl text-sm text-[color:var(--muted)]">
-                    {service.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="skills" className="border-t border-[color:var(--border)] py-16">
-          <div className="mx-auto max-w-6xl px-4">
-            <div className="grid gap-8 md:grid-cols-12 md:items-end">
-              <div className="md:col-span-4">
-                <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Skills</p>
-                <h2 className="mt-4 text-3xl font-semibold">Crafted with intention</h2>
-              </div>
-              <p className="text-lg text-[color:var(--muted)] md:col-span-8">
-                A focused stack that keeps the work lean, fast, and visually consistent.
-              </p>
-            </div>
-
-            <div className="mt-10 grid gap-8 md:grid-cols-3">
-              {SKILL_GROUPS.map((group) => (
-                <div key={group.title} className="space-y-4">
-                  <h3 className="text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">
-                    {group.title}
-                  </h3>
-                  <ul className="space-y-2 text-sm">
-                    {group.items.map((item) => (
-                      <li key={item} className="font-medium">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section id="contact" className="border-t border-[color:var(--border)] py-16">
           <div className="mx-auto max-w-6xl px-4">
             <div className="flex flex-col gap-8 rounded-2xl border border-[color:var(--border)] bg-white p-8 md:flex-row md:items-center md:justify-between">
@@ -311,6 +234,37 @@ export default function PortfolioHero() {
                   })}
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" className="border-t border-[color:var(--border)] py-16">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="grid gap-8 md:grid-cols-12 md:items-end">
+              <div className="md:col-span-4">
+                <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Skills</p>
+                <h2 className="mt-4 text-3xl font-semibold">Crafted with intention</h2>
+              </div>
+              <p className="text-lg text-[color:var(--muted)] md:col-span-8">
+                A focused stack that keeps the work lean, fast, and visually consistent.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-8 md:grid-cols-3">
+              {SKILL_GROUPS.map((group) => (
+                <div key={group.title} className="space-y-4">
+                  <h3 className="text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">
+                    {group.title}
+                  </h3>
+                  <ul className="space-y-2 text-sm">
+                    {group.items.map((item) => (
+                      <li key={item} className="font-medium">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </section>
