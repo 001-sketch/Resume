@@ -2,7 +2,6 @@ import { ArrowUpRight } from "lucide-react";
 import { PROJECTS } from "@/lib/projects";
 
 const NAV_LINKS = [
-  { href: "#projects", label: "Work" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
   { href: "#skills", label: "Skills" },
@@ -55,7 +54,7 @@ export default function PortfolioHero() {
       </header>
 
       <main>
-        <section className="py-16 md:py-24">
+        <section className="py-8 md:py-12">
           <div className="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-12 md:items-end">
             <div className="md:col-span-8">
               <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">
@@ -70,10 +69,10 @@ export default function PortfolioHero() {
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <a
-                  href="#projects"
+                  href="#contact"
                   className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--accent)] px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-white transition-colors duration-200 hover:bg-[color:var(--foreground)]"
                 >
-                  View Work
+                  Contact Me
                   <ArrowUpRight
                     size={16}
                     className="transition-transform duration-200 group-hover:translate-x-0.5"
@@ -117,84 +116,6 @@ export default function PortfolioHero() {
                 Recent work spans hospitality, dining, and fitness brands — with outcomes tied to bookings and
                 enquiries.
               </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="projects" className="border-t border-[color:var(--border)] py-16">
-          <div className="mx-auto max-w-6xl px-4">
-            <div className="grid gap-8 md:grid-cols-12 md:items-end">
-              <div className="md:col-span-5">
-                <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Selected Work</p>
-                <h2 className="mt-4 text-3xl font-semibold">
-                  Projects built around real business problems.
-                </h2>
-              </div>
-              <p className="text-lg text-[color:var(--muted)] md:col-span-7">
-                Each engagement starts with a clear goal and a focused design system. The result: websites that
-                feel deliberate and perform with intent.
-              </p>
-            </div>
-
-            <div className="mt-12 space-y-10">
-              {PROJECTS.map((project) => (
-                <article
-                  key={project.title}
-                  className="group grid gap-8 rounded-3xl border border-[color:var(--border)] bg-white p-6 transition-all duration-200 hover:border-[color:var(--foreground)]/20 hover:shadow-sm md:grid-cols-12 md:items-center md:p-8"
-                >
-                  <div className="md:col-span-5">
-                    <p className="text-xs uppercase tracking-[0.32em] text-[color:var(--muted)]">
-                      {project.summary}
-                    </p>
-                    <h3 className="mt-3 text-2xl font-semibold">{project.title}</h3>
-                    <dl className="mt-6 space-y-4 text-sm text-[color:var(--muted)]">
-                      <div>
-                        <dt className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--foreground)]">
-                          Problem
-                        </dt>
-                        <dd className="mt-2">{project.problem}</dd>
-                      </div>
-                      <div>
-                        <dt className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--foreground)]">
-                          Approach
-                        </dt>
-                        <dd className="mt-2">{project.approach}</dd>
-                      </div>
-                      <div>
-                        <dt className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--foreground)]">
-                          Tools
-                        </dt>
-                        <dd className="mt-2">{project.tools.join(", ")}</dd>
-                      </div>
-                    </dl>
-                    <div className="mt-6 flex items-center gap-3 text-sm">
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 font-semibold text-[color:var(--accent)] transition-colors duration-200 hover:text-[color:var(--foreground)]"
-                      >
-                        View live site
-                        <ArrowUpRight size={14} />
-                      </a>
-                    </div>
-                    <p className="mt-4 text-xs text-[color:var(--muted)] opacity-100 transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
-                      Outcome: {project.outcome}
-                    </p>
-                  </div>
-                  <div className="md:col-span-7">
-                    <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--background)]">
-                      <iframe
-                        title={`${project.title} preview`}
-                        src={project.url}
-                        loading="lazy"
-                        sandbox="allow-scripts"
-                        className="h-full w-full border-0"
-                      />
-                    </div>
-                  </div>
-                </article>
-              ))}
             </div>
           </div>
         </section>
