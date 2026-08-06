@@ -35,7 +35,7 @@ const SKILL_GROUPS = [
 const SOCIALS = [
   { label: "Email", href: "mailto:mikechege93@gmail.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/mike-c-71872a270" },
-  { label: "GitHub", href: "https://github.com/001-sketch" },
+  { label: "GitHub", href: "https://github.com/Mike-chege" },
 ];
 
 export default function PortfolioHero() {
