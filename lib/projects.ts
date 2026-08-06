@@ -1,35 +1,31 @@
 export const PROJECTS = [
   {
-    title: "Cotton Tree Nairobi",
-    url: "https://cotton-tree-nairobi-68w2.arcada.app",
-    summary: "Boutique hospitality site focused on direct bookings.",
-    problem:
-      "The property relied on third-party platforms and lacked a clear, trustworthy booking path on its own site.",
-    approach:
-      "Designed a streamlined room comparison and inquiry flow with strong trust cues and clear pricing hierarchy.",
-    tools: ["Figma", "Next.js", "Tailwind CSS"],
-    outcome: "A clearer decision path for guests ready to book direct.",
+    title: "E-sell Portfolio",
+    stack: ["Next.js", "React", "TypeScript"],
+    summary: "Final-year e-commerce web application built for the ALX Software Engineering program.",
+    highlights: [
+      "Implemented a modern, componentized frontend using React and Next.js.",
+      "Used TypeScript to improve type safety and development reliability.",
+    ],
   },
   {
-    title: "Savannah Grill",
-    url: "https://savannah-grill-79fq.arcada.app",
-    summary: "Restaurant experience with a mobile-first menu journey.",
-    problem:
-      "Guests struggled to find menus and reservation details quickly, especially on mobile.",
-    approach:
-      "Rebuilt the information architecture around menu discovery and reservations with bold, legible typography.",
-    tools: ["Figma", "Next.js", "Vercel"],
-    outcome: "Menus and booking details surfaced within a single scroll.",
+    title: "EazyURL Shortener",
+    stack: ["Python", "JavaScript", "MySQL", "Nginx"],
+    summary:
+      "Built a URL-shortening web service to simplify sharing of long links, handling generation, storage, and redirection.",
+    highlights: [
+      "Designed the MySQL data model for durable and efficient URL storage.",
+      "Deployed the application behind Nginx.",
+    ],
   },
   {
-    title: "Cama Fitness",
-    url: "https://cama-fitness-ygo6.arcada.app",
-    summary: "Membership-led fitness brand with clear plan comparison.",
-    problem:
-      "Prospective members couldn’t quickly understand the difference between plans or class offerings.",
-    approach:
-      "Created a focused pricing layout, simplified plan messaging, and highlighted the class schedule upfront.",
-    tools: ["Figma", "Next.js", "Tailwind CSS"],
-    outcome: "Visitors can compare plans without friction and commit faster.",
+    title: "Airbnb Clone (v1–v4)",
+    stack: ["Python", "HTML", "MySQL", "Nginx"],
+    summary:
+      "Developed a mobile-first clone of a short/long-term rental marketplace across four iterative versions.",
+    highlights: [
+      "Built core property listing and booking flows with a Python backend.",
+      "Added MySQL persistence to support listings and booking workflows.",
+    ],
   },
 ];
