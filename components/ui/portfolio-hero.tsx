@@ -95,7 +95,7 @@ export default function PortfolioHero() {
                   />
                 </a>
                 <a
-                  href="https://github.com/001-sketch"
+                  href="https://github.com/Mike-chege"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-[color:var(--muted)] transition-colors duration-200 hover:text-[color:var(--accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
@@ -207,7 +207,7 @@ export default function PortfolioHero() {
               <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Education</p>
             </div>
             <div className="space-y-3 md:col-span-8">
-              <h2 className="text-2xl font-semibold">ALX Certified Web Designer/Developer</h2>
+              <h2 className="text-2xl font-semibold">ALX Certified Fullstack Designer/Developer</h2>
               <p className="text-[color:var(--muted)]">
                 Intensive software engineering and design training focused on clarity, rhythm, and
                 conversion-focused design methodologies.
