@@ -33,9 +33,33 @@ const SKILL_GROUPS = [
 ];
 
 const SOCIALS = [
-  { label: "Email", href: "mailto:mikechege93@gmail.com" },
+  { label: "Email", href: "mailto:mikechege171@gmail.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/mike-c-71872a270" },
   { label: "GitHub", href: "https://github.com/Mike-chege" },
+];
+
+const EXPERIENCE_ENTRIES = [
+  {
+    company: "Altair Retro Ltd",
+    location: "Westlands",
+    role: "Web Development Intern",
+    period: "July 2024",
+    highlights: [
+      "Maintained and updated the company website using WordPress and HTML",
+      "Improved SEO performance and implemented security enhancements",
+    ],
+  },
+  {
+    company: "Freelance",
+    location: "Nairobi",
+    role: "Web Development Fulltime",
+    period: "2024-Present",
+    highlights: [
+      "Built and deployed marketing sites for small businesses.",
+      "Built a portfolio for multiple clients for personal branding.",
+      "Built e-commerce sites for small businesses.",
+    ],
+  },
 ];
 
 export default function PortfolioHero() {
@@ -112,7 +136,7 @@ export default function PortfolioHero() {
                 </p>
                 <ul className="mt-4 space-y-2 text-sm text-[color:var(--muted)]">
                   <li>Location: Kenya</li>
-                  <li>Email: mikechege93@gmail.com</li>
+                  <li>Email: mikechege171@gmail.com</li>
                   <li>Open to full-stack engineering roles</li>
                 </ul>
               </div>
@@ -167,6 +191,29 @@ export default function PortfolioHero() {
                     ))}
                   </ul>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-[color:var(--border)] py-16">
+          <div className="mx-auto grid max-w-6xl gap-8 px-4 md:grid-cols-12">
+            <div className="md:col-span-4">
+              <p className="text-xs uppercase tracking-[0.4em] text-[color:var(--muted)]">Experience</p>
+            </div>
+            <div className="space-y-6 md:col-span-8">
+              {EXPERIENCE_ENTRIES.map((entry) => (
+                <article key={`${entry.company}-${entry.role}`} className="rounded-2xl border border-[color:var(--border)] bg-white p-6">
+                  <p className="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">
+                    {entry.company} · {entry.location} · {entry.period}
+                  </p>
+                  <h2 className="mt-3 text-2xl font-semibold">{entry.role}</h2>
+                  <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-[color:var(--muted)]">
+                    {entry.highlights.map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+                </article>
               ))}
             </div>
           </div>
@@ -245,10 +292,10 @@ export default function PortfolioHero() {
               </div>
               <div className="space-y-4">
                 <a
-                  href="mailto:mikechege93@gmail.com"
+                  href="mailto:mikechege171@gmail.com"
                   className="inline-flex items-center gap-2 rounded-sm text-sm font-semibold text-[color:var(--accent)] transition-colors duration-200 hover:text-[color:var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
                 >
-                  mikechege93@gmail.com
+                  mikechege171@gmail.com
                   <ArrowUpRight size={14} />
                 </a>
                 <div className="flex flex-wrap gap-4 text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">
