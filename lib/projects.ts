@@ -12,10 +12,11 @@ export const PROJECTS = [
     title: "EazyURL Shortener",
     stack: ["Python", "JavaScript", "MySQL", "Nginx"],
     summary:
-      "Built a URL-shortening web service to simplify sharing of long links, handling generation, storage, and redirection.",
+      "Collaboratively developed a URL-shortening web service to simplify sharing of long links, including generation, storage, and redirection workflows.",
     highlights: [
-      "Designed the MySQL data model for durable and efficient URL storage.",
-      "Deployed the application behind Nginx.",
+      "Shared development and debugging across the team to keep backend and user-facing flows reliable.",
+      "Michael led frontend development and documentation efforts while contributing hands-on debugging support for the interface.",
+      "Why: Michael's creative approach to frontend development adds aesthetic value to our project. His skills in documentation ensure that our project is well-documented for users and developers alike, and his debugging skills contribute to a seamless user interface.",
     ],
   },
   {
