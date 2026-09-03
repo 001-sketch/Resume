@@ -13,6 +13,15 @@ export const PROJECTS = [
     stack: ["Python", "JavaScript", "MySQL", "Nginx"],
     summary:
       "Built a URL-shortening web service to simplify sharing of long links, handling generation, storage, and redirection.",
+    collaboration: {
+      teamSize: 3,
+      roles: [
+        "Documentation",
+        "Frontend Development",
+        "Debugging",
+      ],
+    },
+    why: "My creative approach to frontend development adds aesthetic value to our project. My skills in documentation ensure that our project is well-documented for users and developers alike, and my debugging skills contribute to a seamless user interface.",
     highlights: [
       "Designed the MySQL data model for durable and efficient URL storage.",
       "Deployed the application behind Nginx.",
