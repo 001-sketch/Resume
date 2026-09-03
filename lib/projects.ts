@@ -1,4 +1,12 @@
-export const PROJECTS = [
+export type Project = {
+  title: string;
+  stack: string[];
+  summary: string;
+  highlights: string[];
+  repoUrl: string;
+};
+
+export const PROJECTS: Project[] = [
   {
     title: "E-sell Portfolio",
     stack: ["Next.js", "React", "TypeScript"],
@@ -7,6 +15,7 @@ export const PROJECTS = [
       "Implemented a modern, componentized frontend using React and Next.js.",
       "Used TypeScript to improve type safety and development reliability.",
     ],
+    repoUrl: "https://github.com/Mike-chege/E-Sell_Portfolio",
   },
   {
     title: "EazyURL Shortener",
@@ -18,6 +27,7 @@ export const PROJECTS = [
       "Michael led frontend development and documentation efforts while contributing hands-on debugging support for the interface.",
       "Why: Michael's creative approach to frontend development adds aesthetic value to our project. His skills in documentation ensure that our project is well-documented for users and developers alike, and his debugging skills contribute to a seamless user interface."
     ],
+    repoUrl: "https://github.com/Bigizic/EZYURL-Shortner",
   },
   {
     title: "Airbnb Clone (v1–v4)",
@@ -28,5 +38,6 @@ export const PROJECTS = [
       "Built core property listing and booking flows with a Python backend.",
       "Added MySQL persistence to support listings and booking workflows.",
     ],
+    repoUrl: "https://github.com/Mike-chege/AirBnB_clone_v4",
   },
 ];
