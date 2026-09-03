@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { PROJECTS } from "@/lib/projects";
+import ProjectCard from "@/components/ui/project-card";
 
 const NAV_LINKS = [
   { href: "#about", label: "About" },
@@ -233,16 +234,7 @@ export default function PortfolioHero() {
 
             <div className="mt-10 grid gap-6">
               {PROJECTS.map((project) => (
-                <article key={project.title} className="rounded-2xl border border-[color:var(--border)] bg-white p-6">
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
-                  <p className="mt-2 text-sm text-[color:var(--muted)]">{project.stack.join(" · ")}</p>
-                  <p className="mt-4 text-[color:var(--muted)]">{project.summary}</p>
-                  <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-[color:var(--muted)]">
-                    {project.highlights.map((highlight) => (
-                      <li key={highlight}>{highlight}</li>
-                    ))}
-                  </ul>
-                </article>
+                <ProjectCard key={project.title} project={project} />
               ))}
             </div>
           </div>
