@@ -16,7 +16,7 @@ export const PROJECTS = [
     highlights: [
       "Shared development and debugging across the team to keep backend and user-facing flows reliable.",
       "Michael led frontend development and documentation efforts while contributing hands-on debugging support for the interface.",
-      "Why: Michael's creative approach to frontend development adds aesthetic value to our project. His skills in documentation ensure that our project is well-documented for users and developers alike, and his debugging skills contribute to a seamless user interface.",
+      "Why: Michael's creative approach to frontend development adds aesthetic value to our project. His skills in documentation ensure that our project is well-documented for users and developers alike, and his debugging skills contribute to a seamless user interface." -- Isaac Ajibola, Project Lead,
     ],
   },
   {
