@@ -24,8 +24,7 @@ export const PROJECTS: Project[] = [
       "Collaboratively developed a URL-shortening web service to simplify sharing of long links, including generation, storage, and redirection workflows.",
     highlights: [
       "Shared development and debugging across the team to keep backend and user-facing flows reliable.",
-      "Michael led frontend development and documentation efforts while contributing hands-on debugging support for the interface.",
-      "Why: Michael's creative approach to frontend development adds aesthetic value to our project. His skills in documentation ensure that our project is well-documented for users and developers alike, and his debugging skills contribute to a seamless user interface."
+      "Led frontend development and documentation while contributing hands-on debugging support for the interface."
     ],
     repoUrl: "https://github.com/Bigizic/EZYURL-Shortner",
   },
