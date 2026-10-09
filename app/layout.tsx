@@ -15,6 +15,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Michael Chege" }],
   creator: "Michael Chege",
+  icons: {
+    icon: [
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mike-c.jfif-kNrQXtbWfmVBMBmLdj9gcuJ1fx7T9v.jpeg",
+        type: "image/jpeg",
+      },
+    ],
+    shortcut:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mike-c.jfif-kNrQXtbWfmVBMBmLdj9gcuJ1fx7T9v.jpeg",
+  },
   openGraph: {
     title: "Michael Chege | Full-Stack Developer",
     description:
