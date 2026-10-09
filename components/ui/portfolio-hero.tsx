@@ -1,9 +1,7 @@
 import { ArrowDown, ArrowUpRight, Check, Download, MapPin } from "lucide-react";
-import { PROJECTS } from "@/lib/projects";
-import ProjectCard from "@/components/ui/project-card";
 
 const NAV_LINKS = [
-  { href: "#work", label: "Work" },
+  { href: "/work", label: "Work" },
   { href: "#experience", label: "Experience" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
@@ -70,13 +68,6 @@ export default function PortfolioHero() {
             <div><p className="text-[color:var(--muted)]">Based in</p><p className="mt-2 flex items-center gap-2 font-medium"><MapPin data-icon="inline-start" /> Nairobi, Kenya</p></div>
             <div><p className="text-[color:var(--muted)]">Specialising in</p><p className="mt-2 font-medium">Frontend · Backend · UI/UX</p></div>
             <div><p className="text-[color:var(--muted)]">Experience</p><p className="mt-2 font-medium">Product-minded engineering</p></div>
-          </div>
-        </section>
-
-        <section id="work" aria-labelledby="work-title" className="border-t border-[color:var(--border)] bg-[color:var(--surface)] py-20 lg:py-28">
-          <div className="mx-auto max-w-6xl px-5 lg:px-8">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"><div><p className="eyebrow">Selected work</p><h2 id="work-title" className="section-title">Projects with purpose.</h2></div><p className="max-w-sm text-sm leading-6 text-[color:var(--muted)]">A selection of products and systems built across the stack.</p></div>
-            <div className="mt-12 grid gap-5 lg:grid-cols-3">{PROJECTS.map((project) => <ProjectCard key={project.title} project={project} />)}</div>
           </div>
         </section>
 
