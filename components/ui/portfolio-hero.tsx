@@ -1,6 +1,7 @@
 import { ArrowDown, ArrowUpRight, Check, Download, MapPin } from "lucide-react";
 
 const NAV_LINKS = [
+  { href: "/", label: "Home" },
   { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ];
@@ -36,7 +37,7 @@ export default function PortfolioHero() {
 
       <header className="sticky top-0 z-40 border-b border-[color:var(--border)] bg-[color:var(--background)]/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3 lg:px-8">
-          <a href="#main-content" className="text-sm font-bold tracking-[-0.02em]">MC<span className="text-[color:var(--accent)]">.</span></a>
+          <a href="/" aria-label="Go to home page" className="text-sm font-bold tracking-[-0.02em]">MC<span className="text-[color:var(--accent)]">.</span></a>
           <nav aria-label="Primary navigation" className="hidden items-center gap-7 text-sm text-[color:var(--muted)] md:flex">
             {NAV_LINKS.map((link) => <a key={link.href} href={link.href} className="transition-colors hover:text-[color:var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--accent)]">{link.label}</a>)}
           </nav>
